@@ -1,0 +1,62 @@
+{
+  "name": "reizan-oiv-risk-check",
+  "version": "0.1.0",
+  "description": "Self-assessment CLI for Chilean OIV email, DNS, and transport posture under Ley 21.663.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "reizan-oiv-risk-check": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/cli.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.test.json",
+    "test": "tsx --test test/*.test.ts",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "chile",
+    "cybersecurity",
+    "ciberseguridad",
+    "oiv",
+    "anci",
+    "ley-21663",
+    "self-assessment",
+    "passive-dns",
+    "dmarc",
+    "spf",
+    "dkim",
+    "mta-sts",
+    "dnssec"
+  ],
+  "author": "Reizan",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "anci-oiv-resolver": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.4",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^10.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "sideEffects": false
+}
