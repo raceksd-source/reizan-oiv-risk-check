@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="reizan-oiv-risk-check" width="100%">
+</p>
+
 # reizan-oiv-risk-check
 
 Self-assessment CLI for Chilean entities checking their own domain posture under Ley 21.663. It combines `anci-oiv-resolver` OIV designation context with passive DNS checks for email authentication, DNS integrity, and basic HTTPS reachability.
